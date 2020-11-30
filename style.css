@@ -29,6 +29,21 @@ main {
 .alphabet {
    float: left;
    width: 450px;
-   text-align: center;
    min-height: 280px;
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+}
+
+.letter {
+   width: 40px;
+   height: 40px;
+   margin: 5px;
+   background-color: inherit;
+   font-family: inherit;
+   font-size: 22px;
+   color: inherit;
+   border: 3px solid #d3d3d3;
+   border-radius: 12px;
+   cursor: pointer;
 }
