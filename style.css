@@ -1,7 +1,6 @@
 body {
    background-color: #000;
    color: #d3d3d3;
-   font-size: 28px;
    font-family: monospace;
 }
 
@@ -36,14 +35,22 @@ main {
 }
 
 .letter {
-   width: 40px;
-   height: 40px;
+   width: 45px;
+   height: 45px;
    margin: 5px;
    background-color: inherit;
    font-family: inherit;
-   font-size: 22px;
+   font-size: 28px;
    color: inherit;
-   border: 3px solid #d3d3d3;
+   border: 3px solid #808080;
    border-radius: 12px;
    cursor: pointer;
+   transition: transform .1s ease-in-out;
+}
+
+.letter:hover {
+   transform: scale(1.1);
+   background-color: #222;
+   border: 3px solid #d3d3d3;
+   color: #fff;
 }
