@@ -44,7 +44,6 @@ main {
    color: inherit;
    border: 3px solid #808080;
    border-radius: 12px;
-   cursor: pointer;
    transition: transform .1s ease-in-out;
 }
 
@@ -53,4 +52,19 @@ main {
    background-color: #222;
    border: 3px solid #d3d3d3;
    color: #fff;
+   cursor: pointer;
+}
+
+.letter-true {
+   color: #00A000;
+   background-color: #003000;
+   border: 3px solid #00A000;
+   pointer-events: none;
+}
+
+.letter-false {
+   color: #E00000;
+   background-color: #530000;
+   border: 3px solid #E00000;
+   pointer-events: none;
 }
