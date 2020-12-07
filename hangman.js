@@ -3,6 +3,8 @@ var board = document.querySelector(".board");
 var lettersNumber = password.length;
 var hiddenPassword = "";
 var letters = document.querySelectorAll(".letter")
+var hangmanImg = document.querySelector(".hangman");
+var failure = 0;
 var yes = new Audio("yes.wav");
 var no = new Audio("no.wav");
 
@@ -45,6 +47,9 @@ letters.forEach(function(btn) {
       } else {
          no.play();
          event.target.classList.add("letter-false");
+         failure++;
+         var image = "img/s" + failure + ".jpg";
+         hangmanImg.innerHTML = '<img src="' + image + '" alt="hangman"/>';
       }
    })
 });
