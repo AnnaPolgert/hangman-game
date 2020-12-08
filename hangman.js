@@ -8,6 +8,12 @@ var failure = 0;
 var yes = new Audio("yes.wav");
 var no = new Audio("no.wav");
 
+reset = function() {
+   document.querySelector(".reset").addEventListener("click", function() {
+      location.reload()
+   })
+}
+
 for (i=0; i<lettersNumber; i++) {
    if(password.charAt(i) === " ") {
       hiddenPassword = hiddenPassword + " ";
@@ -50,6 +56,16 @@ letters.forEach(function(btn) {
          failure++;
          var image = "img/s" + failure + ".jpg";
          hangmanImg.innerHTML = '<img src="' + image + '" alt="hangman"/>';
+      }
+
+      if(failure==9) {
+         document.querySelector(".alphabet").innerHTML = '<div class="result">Przegrana! <br> Prawidłowe hasło to: <br>'+ password + ' <br><br> <span class="reset">Jeszcze raz?</span></div>';
+         reset();
+      }
+
+      if(hiddenPassword === password) {
+         document.querySelector(".alphabet").innerHTML = '<div class="result">Wygrana! <br> Podano prawidłowe hasło! <br><br> <span class="reset">Jeszcze raz?</span></div>';
+         reset();
       }
    })
 });
