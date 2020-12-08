@@ -5,9 +5,40 @@ body {
 }
 
 main {
+   position: relative;
    margin-left: auto;
    margin-right: auto;
    width: 900px;
+}
+
+.window-name {
+   position: absolute;
+   right: 250px;
+   top: 150px;
+   background-color: #000;
+   border: 1px solid #fff;
+   opacity: 0.9;
+   width: 400px;
+   height: 165px;
+   font-size: 34px;
+   text-align: center;
+   padding-top: 20px
+}
+
+.input-name {
+   margin-top: 15px;
+   font-size: 22px;
+   font-family: monospace;
+   padding: 3px 10px;
+   outline: none;
+   border-radius: 5px;
+}
+
+.play:hover {
+   color: #00A000;
+   background-color: #003000;
+   border: 3px solid #00A000;
+   cursor: pointer;
 }
 
 .board {
