@@ -1,4 +1,9 @@
-var password = "DLA CHCĄCEGO NIC TRUDNEGO";
+var passwordsBank = [
+   "Bez pracy nie ma kołaczy", "Fortuna kołem się toczy", "Nie chwal dnia przed zachodem", "Apetyt rośnie w miarę jedzenia", "Co ma wisieć nie utonie", "Dzieci i ryby głosu nie mają", "Baba z wozu koniom lżej", "Cel uświęca środki", "Człowiek człowiekowi wilkiem", "Czas to pieniądz", "Co za dużo to niezdrowo", "Co się stało to się nie odstanie", "Co kraj to obyczaj", "Co nagle to po diable", "Co dwie głowy to nie jedna", "Ciekawość pierwszy stopień do piekła", "Ciągnie swój do swego", "Do trzech razy sztuka", "Dzieci i ryby głosu nie mają", "Fortuna często rozumowi przeczy", "Gdy kota nie ma myszy harcują", "Głodnemu chleb na myśli", "Głodny głodnemu wypomni", "Głuchemu próżne słowa", "I króla robaki zjedzą", "Idzie luty podkuj buty", "Jajko mądrzejsze od kury", "Jak cię widzą, tak cię piszą", "Jedna jaskółka nie czyni wiosny", "Krowa która dużo ryczy mało mleka daje", "Kto sieje wiatr ten zbiera burzę", "Lekko przyszło lekko poszło", "Lepiej zapobiegać niż leczyć", "Nic po chlebie kiedy brak zębów", "Nie wszystko złoto co się świeci", "Od przybytku głowa nie boli", "Przyszła kryska na matyska", "Śmiałym szczęście sprzyja", "Wyjątek potwierdza regułę", "Wyszło szydło z worka", "Z dużej chmury mały deszcz", "Dla chcącego nic trudnego"
+];
+var randomNumber = Math.floor(Math.random() * (passwordsBank.length));
+var password = passwordsBank[randomNumber];
+var password = password.toUpperCase();
 var board = document.querySelector(".board");
 var lettersNumber = password.length;
 var hiddenPassword = "";
