@@ -7,12 +7,24 @@ var hangmanImg = document.querySelector(".hangman");
 var failure = 0;
 var yes = new Audio("yes.wav");
 var no = new Audio("no.wav");
+var playButton = document.querySelector(".play");
+var input = document.querySelector(".input-name");
+var name = "";
+var popUpName = document.querySelector(".window-name");
+
+input.addEventListener("change", function() {
+   name = input.value;
+ });
+
+playButton.addEventListener("click", function(event) {
+   popUpName.style.display = "none";
+})
 
 reset = function() {
    document.querySelector(".reset").addEventListener("click", function() {
-      location.reload()
+      location.reload();
    })
-}
+};
 
 for (i=0; i<lettersNumber; i++) {
    if(password.charAt(i) === " ") {
@@ -20,11 +32,11 @@ for (i=0; i<lettersNumber; i++) {
    } else {
       hiddenPassword = hiddenPassword + "-"
    }
-}
+};
 
 var showPassword = function() {
    board.innerHTML = hiddenPassword;
-}
+};
 
 showPassword();
 
@@ -59,12 +71,12 @@ letters.forEach(function(btn) {
       }
 
       if(failure==9) {
-         document.querySelector(".alphabet").innerHTML = '<div class="result">Przegrana! <br> Prawidłowe hasło to: <br>'+ password + ' <br><br> <span class="reset">Jeszcze raz?</span></div>';
+         document.querySelector(".alphabet").innerHTML = '<div class="result">' + name + '! <br> Przegrana! <br> Prawidłowe hasło to: <br>'+ password + ' <br><br> <span class="reset">Jeszcze raz?</span></div>';
          reset();
       }
 
       if(hiddenPassword === password) {
-         document.querySelector(".alphabet").innerHTML = '<div class="result">Wygrana! <br> Podano prawidłowe hasło! <br><br> <span class="reset">Jeszcze raz?</span></div>';
+         document.querySelector(".alphabet").innerHTML = '<div class="result">' + name + '! <br> Wygrana! <br> Podano prawidłowe hasło! <br><br> <span class="reset">Jeszcze raz?</span></div>';
          reset();
       }
    })
